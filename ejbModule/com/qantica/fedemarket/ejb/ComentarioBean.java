@@ -1,5 +1,9 @@
 package com.qantica.fedemarket.ejb;
 
+import java.util.List;
+
+import com.qantica.fedemarket.entidad.Comentario;
+
 /**
  * Bean que permite acceso a los comentarios
  * @author Juan Rubiano
@@ -9,5 +13,17 @@ package com.qantica.fedemarket.ejb;
  */
 
 public class ComentarioBean implements ComentarioBeanLocal, ComentariosBeanRemote{
+
+	@Override
+	public void adicionarComentario(int aid, String uid, int rating, String descripcion, String uname) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Comentario> listarComentarios(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

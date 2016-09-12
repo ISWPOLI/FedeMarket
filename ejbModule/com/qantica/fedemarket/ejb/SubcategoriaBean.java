@@ -2,6 +2,7 @@ package com.qantica.fedemarket.ejb;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -16,6 +17,7 @@ import com.qantica.fedemarket.entidad.Subcategoria;
  * 08/09/2016 
  */
 
+@Stateless
 public class SubcategoriaBean implements SubcategoriaBeanLocal , SubcategoriaBeanRemote{
 	
 	@PersistenceContext(unitName="EjbFedeMarket")

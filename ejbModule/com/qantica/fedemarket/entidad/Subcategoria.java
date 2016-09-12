@@ -17,6 +17,7 @@ import javax.persistence.*;
  */
 
 @Entity
+@Table(name="subcategoria")
 public class Subcategoria implements Serializable {
       
 	@Id

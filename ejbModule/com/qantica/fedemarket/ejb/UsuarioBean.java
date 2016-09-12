@@ -2,6 +2,7 @@ package com.qantica.fedemarket.ejb;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
@@ -9,7 +10,8 @@ import javax.persistence.Query;
 
 import com.qantica.fedemarket.entidad.Usuario;
 
-public class UsuarioBean implements UsuarioBeanLocal{
+ @Stateless
+public class UsuarioBean implements UsuarioBeanLocal, UsuarioBeanRemote{
 
 	@PersistenceContext(unitName="EjbFedeMarket")
 	EntityManager manager;
@@ -48,7 +50,7 @@ public class UsuarioBean implements UsuarioBeanLocal{
 		Usuario user = null;
 		int id;
 		try{			
-			Query query = manager.createQuery("select ent from Usuario ent where nombreUsuario=:x and contrasena=:y");
+			Query query = manager.createQuery("SELECT entidad FROM Usuario entidad WHERE nombreUsuario=:x AND contrasena=:y");
 			query.setParameter("x", nombreUsuario);
 			query.setParameter("y", contrasena);
 			user = (Usuario) query.getSingleResult();

@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -20,6 +21,7 @@ import com.qantica.fedemarket.entidad.Contenido;
  * 08/09/2016 
  */
 
+@Stateless
 public class ComentarioBean implements ComentarioBeanLocal, ComentariosBeanRemote{
 
 	@PersistenceContext(unitName="EjbFedeMarket")

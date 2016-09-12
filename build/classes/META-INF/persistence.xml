@@ -12,7 +12,7 @@
 		<class>com.qantica.fedemarket.entidad.Ingreso</class>
 		<class>com.qantica.fedemarket.entidad.Noticia</class>
 		<class>com.qantica.fedemarket.entidad.Rol</class>
-		<class>com.qantica.fedemarket.entidad.SubCategoria</class>
+		<class>com.qantica.fedemarket.entidad.Subcategoria</class>
 		<class>com.qantica.fedemarket.entidad.Usuario</class>	
 		<properties>
 		 	<!-- <property name="eclipselink.ddl-generation" value="none" /> --> 

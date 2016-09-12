@@ -1,5 +1,9 @@
 package com.qantica.fedemarket.ejb;
 
-public interface CategoriaBeanRemote {
+import javax.ejb.Remote;
 
+@Remote
+public interface CategoriaBeanRemote {
+	
+	
 }

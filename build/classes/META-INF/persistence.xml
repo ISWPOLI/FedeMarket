@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<persistence-unit name="EjbFedeMarket" transaction-type="JTA">
+		<jta-data-source>java:jboss/qanticamarket</jta-data-source>
+		<class>com.qantica.fedemarket.entidad.Categoria</class>
+		<class>com.qantica.fedemarket.entidad.Comentario</class>
+		<class>com.qantica.fedemarket.entidad.Contenido</class>
+		<class>com.qantica.fedemarket.entidad.Descarga</class>
+		<class>com.qantica.fedemarket.entidad.Ingreso</class>
+		<class>com.qantica.fedemarket.entidad.Noticia</class>
+		<class>com.qantica.fedemarket.entidad.Rol</class>
+		<class>com.qantica.fedemarket.entidad.SubCategoria</class>
+		<class>com.qantica.fedemarket.entidad.Usuario</class>	
+		<properties>
+		 	<!-- <property name="eclipselink.ddl-generation" value="none" /> --> 
+		  	<!--property name="eclipselink.ddl-generation" value="create-tables"/-->
+			<!--property name="hibernate.hbm2ddl.auto" value="create"/-->
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/> -->
+			<!-- <property name="eclipselink.jdbc.batch-writing" value="JDBC"></property> -->
+			<!-- <property name="hibernate.hbm2ddl.auto" value="create"/> -->			 
+			<!-- ========================================================================= -->
+			<property name="eclipselink.ddl-generation" value="none" /> 
+		  	<!--property name="eclipselink.ddl-generation" value="create-tables"/-->
+			<!--property name="hibernate.hbm2ddl.auto" value="create"/-->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/> 
+		</properties>
+	</persistence-unit>
+</persistence>

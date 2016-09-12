@@ -13,5 +13,6 @@ public interface DescargaBeanLocal {
 	public Descarga buscarDescarga(int id);
 	public void actualizarDescarga(Descarga categoria);
 	public List<Descarga> historialDescarga();
+	public List<Descarga> listDescagaUsuario(String user);
 	
 }

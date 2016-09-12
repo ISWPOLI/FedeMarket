@@ -2,6 +2,10 @@ package com.qantica.fedemarket.ejb;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 import com.qantica.fedemarket.entidad.Ingreso;
 
 /**
@@ -12,10 +16,14 @@ import com.qantica.fedemarket.entidad.Ingreso;
  */
 public class IngresoBean implements IngresoBeanLocal{
 
+	@PersistenceContext(unitName="EjbFedeMarket")
+	EntityManager manager;
+	
 	@Override
 	public List<Ingreso> listarIngresos(String user) {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = manager.createQuery("SELECT entidad FROM descarga entidad WHERE entidad.usuario=:x");
+		query.setParameter("x", user);
+		return query.getResultList();
 	}
 
 	@Override

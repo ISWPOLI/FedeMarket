@@ -3,7 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/persistence" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
-	<persistence-unit name="EjbTiendaQantica" transaction-type="JTA">
+	<persistence-unit name="EjbFedeMarket" transaction-type="JTA">
 		<jta-data-source>java:jboss/qanticamarket</jta-data-source>
 		<class>com.qantica.fedemarket.entidad.Categoria</class>
 		<class>com.qantica.fedemarket.entidad.Comentario</class>

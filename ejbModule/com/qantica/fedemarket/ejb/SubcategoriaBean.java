@@ -2,6 +2,10 @@ package com.qantica.fedemarket.ejb;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 import com.qantica.fedemarket.entidad.Subcategoria;
 
 /**
@@ -13,35 +17,49 @@ import com.qantica.fedemarket.entidad.Subcategoria;
  */
 
 public class SubcategoriaBean implements SubcategoriaBeanLocal , SubcategoriaBeanRemote{
-
-	@Override
-	public List<Subcategoria> listarSubcategorias(int categoria) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Subcategoria> listarSubcategoriasNivel(int subcategoria) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
+	@PersistenceContext(unitName="EjbFedeMarket")
+	EntityManager manager;
+	
 	@Override
 	public void adicionarSubcategoria(Subcategoria subcategoria) {
-		// TODO Auto-generated method stub
-		
+		manager.persist(subcategoria);
 	}
-
+	
 	@Override
 	public void actualizarSubcategoria(Subcategoria subcategoria) {
-		// TODO Auto-generated method stub
-		
+		manager.merge(subcategoria);		
 	}
-
+	
 	@Override
 	public Subcategoria buscarSubcategoria(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return manager.find(Subcategoria.class, id);
+	}
+	
+	/**
+	 * Lista las subcategorias de acuerdo a la categoria
+	 * @param id de la categoria
+	 * @return lista con las subcategorias
+	 */
+	@Override
+	public List<Subcategoria> listarSubcategorias(int categoria) {
+		Query query = manager.createQuery("SELECT entidad FROM subcategoria entidad WHERE categoria_id=:x AND estado=:y");
+		query.setParameter("x", categoria);
+		query.setParameter("y", true);
+		return query.getResultList();
+	}
+
+	/**
+	 * Lista las subcategoria de acuerdo al subnivel
+	 * @param id de la subcategoria
+	 * @return lista de las subcategorias
+	 */
+	@Override
+	public List<Subcategoria> listarSubcategoriasNivel(int subcategoria) {
+		Query query = manager.createQuery("SELECT entidad FROM subcategoria entidad WHERE subcategoria_id=:x AND estado=:y");
+		query.setParameter("x", subcategoria);
+		query.setParameter("y", true);
+		return query.getResultList();
 	}
 
 }

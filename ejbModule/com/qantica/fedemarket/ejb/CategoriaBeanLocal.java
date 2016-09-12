@@ -6,6 +6,14 @@ import javax.ejb.Local;
 import com.qantica.fedemarket.entidad.Categoria;
 import com.qantica.fedemarket.entidad.Subcategoria;
 
+/**
+ * Bean que permite acceso a las categorias
+ * @author Juan Rubiano
+ * Q-antica Ltda
+ * Colombia
+ * 08/09/2016 
+ */
+
 @Local
 public interface CategoriaBeanLocal {
 	
@@ -17,7 +25,7 @@ public interface CategoriaBeanLocal {
 	
 	/*	MÉTODOS PARA EL MÓVIL */
 	public List<Categoria> listarCategoriaMovil(int rol);
-	public List<Subcategoria> listarSubcategoriasMovil();
+	public List<Subcategoria> listarSubcategoriasMovil(int categoria);
 	public List<Categoria> listarInterCategoriaMovil(int categoria);
 	public List<Categoria> listarSubcategoriaMovil(int intercategoria);
 }

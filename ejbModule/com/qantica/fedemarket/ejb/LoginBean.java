@@ -1,5 +1,9 @@
 package com.qantica.fedemarket.ejb;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 import com.qantica.fedemarket.entidad.Usuario;
 
 /**
@@ -11,11 +15,21 @@ import com.qantica.fedemarket.entidad.Usuario;
  */
 
 public class LoginBean implements LoginBeanLocal, LoginBeanRemote{
-
+	
+	@PersistenceContext(unitName="EjbFedeMarket")
+	EntityManager manager;	
+	
 	@Override
 	public Usuario validarUsuario(String usuario, String contrasena) {
-		// TODO Auto-generated method stub
-		return null;
+		Query query = manager.createQuery("SELECT ent FROM Usuario ent WHERE nombreUsuario=:x AND contrasena=:y");
+		query.setParameter("x", usuario);
+		query.setParameter("y", contrasena);
+		
+		try {
+			return (Usuario) query.getSingleResult();
+		} catch (Exception e) {
+			return null;
+		}
 	}
 
 }

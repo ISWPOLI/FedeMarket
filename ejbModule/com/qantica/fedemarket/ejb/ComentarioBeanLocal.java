@@ -6,6 +6,13 @@ import javax.ejb.Local;
 
 import com.qantica.fedemarket.entidad.Comentario;
 
+/**
+ * Bean que permite acceso a las categorias
+ * @author Juan Rubiano
+ * Q-antica Ltda
+ * Colombia
+ * 08/09/2016 
+ */
 @Local
 public interface ComentarioBeanLocal {
 	

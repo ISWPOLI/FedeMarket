@@ -102,7 +102,7 @@ public class Categoria implements Serializable{
 		this.icono = icono;
 	}
 	
-	public boolean isEstado() {
+	public boolean getEstado() {
 		return estado;
 	}
 	

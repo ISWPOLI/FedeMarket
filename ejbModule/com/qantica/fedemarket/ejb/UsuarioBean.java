@@ -69,4 +69,10 @@ public class UsuarioBean implements UsuarioBeanLocal, UsuarioBeanRemote{
 
 	}
 
+	@Override
+	public void addRegistro(String nombre, String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

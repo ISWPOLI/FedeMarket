@@ -7,7 +7,7 @@ import javax.ejb.Local;
 import com.qantica.fedemarket.entidad.Ingreso;
 
 @Local
-public interface IngresoBeanLocal {
+public interface IngresoBeanRemote {
 
 	public List<Ingreso> listarIngresos(String user);
 	public List<Ingreso> listarIngresosSinDescarga();

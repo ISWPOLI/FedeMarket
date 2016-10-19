@@ -51,6 +51,13 @@ public class DescargaBean implements DescargaBeanLocal, DescargaBeanRemote {
 		query.setParameter("x", user);
 		return query.getResultList();
 	}
+
+	@Override
+	public List<Descarga> listDescargaUsuario(String user) {
+		Query query=manager.createQuery("select entidad from Descarga entidad where entidad.usuario =:x");
+		query.setParameter("x", user);
+		return query.getResultList();	
+	}
 	
 	
 

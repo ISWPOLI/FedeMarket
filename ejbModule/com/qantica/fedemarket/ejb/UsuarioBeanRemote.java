@@ -13,5 +13,6 @@ public interface UsuarioBeanRemote {
 	public void actualizarUsuario(Usuario usuario);	
 	public Usuario login(String usuario, String contrasena);
 	public List<Usuario> listarUsuarios();
+	public void addRegistro(String nombre, String string);
 	
 }

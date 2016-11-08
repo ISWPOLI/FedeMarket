@@ -26,6 +26,7 @@ public class CategoriaBean implements CategoriaBeanLocal, CategoriaBeanRemote{
 	
 	/**
 	 * Agrega la categoria a la base de datos
+	 * @param categoria
 	 */
 	@Override
 	public void adicionarCategoria(Categoria categoria) {
@@ -41,7 +42,8 @@ public class CategoriaBean implements CategoriaBeanLocal, CategoriaBeanRemote{
 	}
 	
 	/**
-	 * Actualiza la categoria 
+	 * Actualiza la categoria
+	 * @param categoria objeto
 	 */
 	@Override
 	public void actualizarCategoria(Categoria categoria) {
@@ -110,6 +112,12 @@ public class CategoriaBean implements CategoriaBeanLocal, CategoriaBeanRemote{
 
 	@Override
 	public List<Categoria> listarSubcategoriaMovil(int intercategoria) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Subcategoria> listarSubcategorias(int idCategoria) {
 		// TODO Auto-generated method stub
 		return null;
 	}

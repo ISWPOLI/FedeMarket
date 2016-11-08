@@ -17,7 +17,7 @@ import com.qantica.fedemarket.entidad.Ingreso;
  */
 
 @Stateless
-public class IngresoBean implements IngresoBeanLocal{
+public class IngresoBean implements IngresoBeanRemote{
 
 	@PersistenceContext(unitName="EjbFedeMarket")
 	EntityManager manager;

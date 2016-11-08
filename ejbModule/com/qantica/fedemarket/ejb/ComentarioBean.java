@@ -22,7 +22,7 @@ import com.qantica.fedemarket.entidad.Contenido;
  */
 
 @Stateless
-public class ComentarioBean implements ComentarioBeanLocal, ComentariosBeanRemote{
+public class ComentarioBean implements ComentarioBeanLocal, ComentarioBeanRemote{
 
 	@PersistenceContext(unitName="EjbFedeMarket")
 	EntityManager manager;
@@ -69,6 +69,15 @@ public class ComentarioBean implements ComentarioBeanLocal, ComentariosBeanRemot
 		contenido.setRating((int) aux);
 		
 		manager.merge(contenido);
+	}
+
+	@Override
+	public List<Comentario> listarComentariosUsuario(String user) {
+
+		Query query = manager.createQuery("select entidad from Comentario entidad where entidad.uid=:x");
+		query.setParameter("x",user);
+		
+		return query.getResultList();
 	}
 
 }

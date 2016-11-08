@@ -53,10 +53,10 @@ public class Contenido implements Serializable {
 	@Column(name="ruta")
 	private String ruta;
 	
-	@Column(name="captura1")
+	@Column(name="captura_1")
 	private String captura_1;
 	
-	@Column(name="captura2")
+	@Column(name="captura_2")
 	private String captura_2;
 
 	@ManyToOne

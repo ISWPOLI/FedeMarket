@@ -89,4 +89,14 @@ public class ContenidoBean implements ContenidoBeanLocal, ContenidoBeanRemote{
 		return query.getResultList();
 	}
 
+	
+	/**
+	 * Actualiza el contenido
+	 * @param objeto contenido que se va a actualizar
+	 */
+	@Override
+	public void updateContenido(Contenido contenido){		
+		manager.merge(contenido);
+	}	
+
 }

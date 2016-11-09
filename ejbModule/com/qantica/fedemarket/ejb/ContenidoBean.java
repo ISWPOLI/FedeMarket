@@ -61,6 +61,7 @@ public class ContenidoBean implements ContenidoBeanLocal, ContenidoBeanRemote{
 	 * Lista el contenido para la aplicación web sin restricción de resultados
 	 * @return lista de contenido sin restricción de resultados
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Contenido> listarContenido() {		
 		Query query= manager.createQuery("SELECT entidad FROM Contenido entidad ORDER BY entidad.id desc");		

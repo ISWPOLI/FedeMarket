@@ -26,6 +26,7 @@ public class CategoriaBean implements CategoriaBeanLocal, CategoriaBeanRemote{
 	
 	/**
 	 * Agrega la categoria a la base de datos
+	 * @param categoria
 	 */
 	@Override
 	public void adicionarCategoria(Categoria categoria) {
@@ -64,7 +65,7 @@ public class CategoriaBean implements CategoriaBeanLocal, CategoriaBeanRemote{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> listarCategorias() {
-		Query query = manager.createQuery("SELECT entidad.nombre FROM categoria entidad ORDER BY entidad.nombre");
+		Query query = manager.createQuery("SELECT entidad.nombre FROM Categoria entidad ORDER BY entidad.nombre");
 		return query.getResultList();
 	}
 
@@ -74,7 +75,7 @@ public class CategoriaBean implements CategoriaBeanLocal, CategoriaBeanRemote{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Categoria> listarCategoriasServlet() {
-		Query query = manager.createQuery("SELECT entidad FROM categoria entidad ORDER BY entidad.nombre");		
+		Query query = manager.createQuery("SELECT entidad FROM Categoria entidad ORDER BY entidad.nombre");		
 		return query.getResultList();
 	}
 	
@@ -84,7 +85,7 @@ public class CategoriaBean implements CategoriaBeanLocal, CategoriaBeanRemote{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Categoria> listarCategoriaMovil(int rol) {
-		Query query = manager.createQuery("SELECT entidad FROM categoria entidad WHERE entidad.estado=:x AND entidad.rol");
+		Query query = manager.createQuery("SELECT entidad FROM Categoria entidad WHERE entidad.estado=:x AND entidad.rol");
 		query.setParameter("x", true);
 		query.setParameter("y", rol);
 		return query.getResultList();
@@ -97,7 +98,7 @@ public class CategoriaBean implements CategoriaBeanLocal, CategoriaBeanRemote{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Subcategoria> listarSubcategoriasMovil(int categoria) {
-		Query query = manager.createQuery("SELECT entidad FROM subcategoria entidad WHERE entidad.estado=:x AND entidad.categoria=:y");
+		Query query = manager.createQuery("SELECT entidad FROM Subcategoria entidad WHERE entidad.estado=:x AND entidad.categoria=:y");
 		query.setParameter("x", true);
 		query.setParameter("y", categoria);
 		return query.getResultList();

@@ -14,8 +14,7 @@ import javax.persistence.Table;
 /**
  * @author Juan Rubiano 
  * 08/09/2016
- * Q-antica Ltda.
- *   
+ * Q-antica Ltda.   
  */
 
 @Entity

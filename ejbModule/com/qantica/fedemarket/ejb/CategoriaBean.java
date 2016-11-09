@@ -115,7 +115,12 @@ public class CategoriaBean implements CategoriaBeanLocal, CategoriaBeanRemote{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	/**
+	 * Lista las subcategorias
+	 * @param idCategoria 0 si se desean todas
+	 * @return Lis<Subcategoria>
+	 */
 	@Override
 	public List<Subcategoria> listarSubcategorias(int idCategoria) {
 		if(idCategoria == 0){
@@ -123,9 +128,9 @@ public class CategoriaBean implements CategoriaBeanLocal, CategoriaBeanRemote{
 			query.setParameter("x", true);
 			return query.getResultList();
 		}else{
-			Query query = manager.createQuery("SELECT entidad FROM Subcategoria entidad WHERE entidad.estado=:x AND entidad.categoria=:y");
+			Query query = manager.createQuery("SELECT entidad FROM Subcategoria entidad WHERE entidad.estado=:x AND entidad.categoria.id=:y");
 			query.setParameter("x", true);
-			query.setParameter("y", idCategoria);
+			query.setParameter("y", Integer.valueOf(idCategoria));
 			return query.getResultList();
 		}	
 		

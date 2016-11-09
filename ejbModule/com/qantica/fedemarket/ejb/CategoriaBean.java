@@ -15,7 +15,7 @@ import com.qantica.fedemarket.entidad.Subcategoria;
  * @author Juan Rubiano
  * Q-antica Ltda
  * Colombia
- * 09/09/2016 
+ * 09/11/2016 
  */
 
 @Stateless
@@ -94,6 +94,7 @@ public class CategoriaBean implements CategoriaBeanLocal, CategoriaBeanRemote{
 	
 	/**
 	 * Devuelve las subcategorias del movil de acuerdo a la categoria seleccionada
+	 * @param categoria id de la categoria 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
@@ -103,7 +104,6 @@ public class CategoriaBean implements CategoriaBeanLocal, CategoriaBeanRemote{
 		query.setParameter("y", categoria);
 		return query.getResultList();
 	}
-
 	
 	@Override
 	public List<Categoria> listarInterCategoriaMovil(int categoria) {
@@ -118,8 +118,17 @@ public class CategoriaBean implements CategoriaBeanLocal, CategoriaBeanRemote{
 
 	@Override
 	public List<Subcategoria> listarSubcategorias(int idCategoria) {
-		// TODO Auto-generated method stub
-		return null;
+		if(idCategoria == 0){
+			Query query = manager.createQuery("SELECT entidad FROM Subcategoria entidad WHERE entidad.estado=:x");
+			query.setParameter("x", true);
+			return query.getResultList();
+		}else{
+			Query query = manager.createQuery("SELECT entidad FROM Subcategoria entidad WHERE entidad.estado=:x AND entidad.categoria=:y");
+			query.setParameter("x", true);
+			query.setParameter("y", idCategoria);
+			return query.getResultList();
+		}	
+		
 	}
 
 }

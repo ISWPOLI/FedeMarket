@@ -64,4 +64,6 @@ public class SubcategoriaBean implements SubcategoriaBeanLocal , SubcategoriaBea
 		return query.getResultList();
 	}
 
+	
+
 }

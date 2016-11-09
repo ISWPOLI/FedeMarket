@@ -41,11 +41,14 @@ public class Categoria implements Serializable{
 	@Column(name="rol_id")
 	private int rol;
 	
+	/**
+	 * NO ESTAN LOS DATOS DE CATEGORIA EN LA BASE DE DATOS
+	 
 	@OneToMany(mappedBy = "categoria")
 	List<Subcategoria> listaSubCategoria;
 	
 	@OneToMany(mappedBy = "categoria")
-	List<Contenido> listaContenido;
+	List<Contenido> listaContenido;*/
 	
 	private static final long serialVersionUID = 1L;
 
@@ -77,21 +80,6 @@ public class Categoria implements Serializable{
 		this.descripcion = descripcion;
 	}
 	
-	public List<Contenido> getListaContenido() {
-		return listaContenido;
-	}
-	
-	public void setListaContenido(List<Contenido> listaContenido) {
-		this.listaContenido = listaContenido;
-	}
-	
-	public List<Subcategoria> getListaSubCaregoria() {
-		return listaSubCategoria;
-	}
-	
-	public void setListaSubCaregoria(List<Subcategoria> listaSubCategoria) {
-		this.listaSubCategoria = listaSubCategoria;
-	}
 	
 	public String getIcono() {
 		return icono;

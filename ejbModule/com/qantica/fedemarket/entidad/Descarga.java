@@ -7,14 +7,10 @@ import javax.persistence.*;
 
 /**
  * @author Juan Rubiano 
- * 08/09/2016
+ * 09/11/2016
  * Q-antica Ltda.   
  */
 
-/*
- * Se cambio el campo "fecha" de VARCHAR(355) a DATETIME
- * Se cambio el campo "usuario VARCHAR(255)" a "usuario_id INT"
- */
 @Entity
 @Table(name="descarga")
 public class Descarga implements Serializable {
@@ -27,12 +23,10 @@ public class Descarga implements Serializable {
 	@Column(name="fecha")
 	private String fecha;	
 	
-	@Column(name="nombre")
-	private String nombre;
 	
 	@ManyToOne
 	@JoinColumn(name="contenido_id")
-	private Contenido contenido;
+	private int contenido;
 	
 	//@ManyToOne
 	@JoinColumn(name="usuario_id")
@@ -57,11 +51,11 @@ public class Descarga implements Serializable {
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}   
-	public Contenido getContenido() {
+	public int getContenido() {
 		return this.contenido;
 	}
 
-	public void setContenido(Contenido contenido) {
+	public void setContenido(int contenido) {
 		this.contenido = contenido;
 	}
 	
@@ -71,12 +65,7 @@ public class Descarga implements Serializable {
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+	
 	
 	
    

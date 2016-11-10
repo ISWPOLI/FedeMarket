@@ -44,7 +44,7 @@ public class NoticiaBean implements NoticiaBeanLocal, NoticiaBeanRemote{
 	 */
 	@Override
 	public List<Noticia> listarNoticias() {
-		Query query = manager.createQuery("SELECT entidad FROM noticia ORDER BY noticia.id DESC");		
+		Query query = manager.createQuery("SELECT entidad FROM Noticia entidad ORDER BY entidad.id DESC");		
 		return query.getResultList();
 	}
 	
@@ -55,7 +55,7 @@ public class NoticiaBean implements NoticiaBeanLocal, NoticiaBeanRemote{
 	 */
 	@Override
 	public List<Noticia> listarNoticias(int rol) {
-		Query query = manager.createQuery("SELECT entidad FROM noticia entidad WHERE rol_id=:x ORDER BY entidad.id DESC");
+		Query query = manager.createQuery("SELECT entidad FROM Noticia entidad WHERE rol_id=:x ORDER BY entidad.id DESC");
 		query.setParameter("x", rol);
 		query.setMaxResults(5);
 		return query.getResultList();

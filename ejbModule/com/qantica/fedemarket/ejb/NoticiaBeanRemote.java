@@ -13,4 +13,5 @@ public interface NoticiaBeanRemote {
 	public Noticia buscarNoticia(int id);
 	public void actualizarNoticia(Noticia noticia);
 	public List<Noticia> listarNoticias(int rol);
+	public List<Noticia> listarNoticias();
 }

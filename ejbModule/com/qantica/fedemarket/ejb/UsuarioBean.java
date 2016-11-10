@@ -18,8 +18,7 @@ public class UsuarioBean implements UsuarioBeanLocal, UsuarioBeanRemote{
 	
 	@Override
 	public void adicionarUsuario(Usuario usuario) {
-		manager.persist(usuario);
-		
+		manager.persist(usuario);		
 	}
 
 	@Override
@@ -70,9 +69,6 @@ public class UsuarioBean implements UsuarioBeanLocal, UsuarioBeanRemote{
 	}
 
 	@Override
-	public void addRegistro(String nombre, String string) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void addRegistro(String nombre, String string) {}
 
 }

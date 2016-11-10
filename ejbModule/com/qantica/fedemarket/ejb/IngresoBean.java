@@ -24,14 +24,19 @@ public class IngresoBean implements IngresoBeanRemote{
 	
 	@Override
 	public List<Ingreso> listarIngresos(String user) {
-		Query query = manager.createQuery("SELECT entidad FROM descarga entidad WHERE entidad.usuario=:x");
-		query.setParameter("x", user);
-		return query.getResultList();
+		if(user.equals("")){
+			Query query = manager.createQuery("SELECT entidad FROM Descarga entidad");
+			return query.getResultList();
+		}else{
+			Query query = manager.createQuery("SELECT entidad FROM Descarga entidad WHERE entidad.usuario=:x");
+			query.setParameter("x", user);
+			return query.getResultList();
+		}
+		
 	}
 
 	@Override
 	public List<Ingreso> listarIngresosSinDescarga() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

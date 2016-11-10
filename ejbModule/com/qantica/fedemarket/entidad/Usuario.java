@@ -33,6 +33,9 @@ public class Usuario implements Serializable{
 	@Column(name="apellido")
 	private String apellido;
 	
+	@Column(name="nombreUsuario")
+	private String usuario;
+	
 	@Column(name="contrasena")
 	private String contrasena;
 	
@@ -82,6 +85,14 @@ public class Usuario implements Serializable{
 
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
+	}
+	
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getIdentificacion() {

@@ -18,7 +18,7 @@ import com.qantica.fedemarket.entidad.Contenido;
  * @author Juan Rubiano
  * Q-antica Ltda
  * Colombia
- * 08/09/2016 
+ * 09/11/2016 
  */
 
 @Stateless
@@ -73,11 +73,14 @@ public class ComentarioBean implements ComentarioBeanLocal, ComentarioBeanRemote
 
 	@Override
 	public List<Comentario> listarComentariosUsuario(String user) {
-
-		Query query = manager.createQuery("select entidad from Comentario entidad where entidad.uid=:x");
-		query.setParameter("x",user);
-		
-		return query.getResultList();
+		if(user.equals("")){
+			Query query = manager.createQuery("SELECT entidad FROM Comentario entidad");
+			return query.getResultList();
+		}else{
+			Query query = manager.createQuery("SELECT entidad FROM Comentario entidad WHERE entidad.id=:x");
+			query.setParameter("x",user);			
+			return query.getResultList();
+		}		
 	}
 
 }

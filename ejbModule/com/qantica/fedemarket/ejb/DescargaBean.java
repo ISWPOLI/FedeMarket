@@ -13,7 +13,7 @@ import com.qantica.fedemarket.entidad.Descarga;
 /**
  * Bean que permite acceso a las descargas
  * @author Juan Rubiano
- * 11/09/2016 
+ * 09/11/2016 
  */
 
 @Stateless

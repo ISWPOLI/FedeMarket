@@ -6,11 +6,10 @@ import java.lang.String;
 import javax.persistence.*;
 
 /**
+ * Entidad Comentario
  * @author Juan Rubiano 
- * 08/09/2016
- * Q-antica Ltda.   
+ * 09/11/2016
  */
-
 
 @Entity
 @Table(name="comentario")

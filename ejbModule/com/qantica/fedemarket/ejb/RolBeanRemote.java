@@ -13,6 +13,4 @@ public interface RolBeanRemote {
 	public void actualizarRol(Rol rol);
 	public Rol buscarRol(int id);
 	public List<Rol> listarRoles();
-
-	
 }

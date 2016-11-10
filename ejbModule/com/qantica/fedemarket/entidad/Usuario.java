@@ -13,7 +13,6 @@ import javax.persistence.Table;
 /**
  * @author Juan Rubiano 
  * 08/09/2016
- * Q-antica Ltda.   
  */
 
 @Entity
@@ -109,7 +108,6 @@ public class Usuario implements Serializable{
 
 	public void setRol(Rol rol) {
 		this.rol = rol;
-	}
-	
+	}	
 	
 }

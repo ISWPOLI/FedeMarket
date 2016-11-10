@@ -7,13 +7,7 @@ import javax.persistence.*;
 
 /**
  * @author Juan Rubiano 
- * 08/09/2016
- * Q-antica Ltda.   
- */
-
-/*
- * Se cambio el campo "miSubCategoria_id INT" a "subcategoria_id INT"
- * Se cambio el campo "estado BIT" a "estado TINYINT"
+ * 10/11/2016 
  */
 
 @Entity

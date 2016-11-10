@@ -64,6 +64,17 @@ public class SubcategoriaBean implements SubcategoriaBeanLocal , SubcategoriaBea
 		return query.getResultList();
 	}
 
+	/**
+	 * Lista todas las subcategorias
+	 * @return lista con las subcategorias
+	 */
+	@Override
+	public List<Subcategoria> listarSubcategorias() {
+		Query query = manager.createQuery("SELECT entidad FROM Subcategoria entidad WHERE entidad.estado=:x");
+		query.setParameter("x", true);
+		return query.getResultList();
+	}
+
 	
 
 }

@@ -12,9 +12,7 @@ import com.qantica.fedemarket.entidad.Rol;
 /**
  * Bean que permite acceso a los roles
  * @author Juan Rubiano
- * Q-antica Ltda
- * Colombia
- * 08/09/2016 
+ * 10/11/2016 
  */
 
 @Stateless
@@ -25,14 +23,12 @@ public class RolBean implements RolBeanLocal, RolBeanRemote{
 	
 	@Override
 	public void adicionarRol(Rol rol) {
-		manager.persist(rol);
-		
+		manager.persist(rol);		
 	}
 
 	@Override
 	public void actualizarRol(Rol rol) {
-		manager.merge(rol);
-		
+		manager.merge(rol);		
 	}
 
 	@Override
@@ -42,7 +38,7 @@ public class RolBean implements RolBeanLocal, RolBeanRemote{
 
 	@Override
 	public List<Rol> listarRoles() {
-		Query query = manager.createQuery("SELECT entidad FROM rol ORDER BY entidad.id DESC");		
+		Query query = manager.createQuery("SELECT entidad FROM Rol entidad ORDER BY entidad.id DESC");		
 		return query.getResultList();
 	}
 

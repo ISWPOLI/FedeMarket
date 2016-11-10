@@ -6,22 +6,23 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.Table;
 
 import com.qantica.fedemarket.entidad.Descarga;
 
 /**
  * Bean que permite acceso a las descargas
  * @author Juan Rubiano
- * Q-antica Ltda
- * Colombia
- * 08/09/2016 
+ * 11/09/2016 
  */
 
 @Stateless
+@Table(name="descarga")
 public class DescargaBean implements DescargaBeanLocal, DescargaBeanRemote {
 
 	@PersistenceContext(unitName="EjbFedeMarket")
 	EntityManager manager;
+	
 	
 	@Override
 	public void adicionarDescarga(Descarga descarga) {
@@ -35,8 +36,7 @@ public class DescargaBean implements DescargaBeanLocal, DescargaBeanRemote {
 
 	@Override
 	public void actualizarDescarga(Descarga descarga) {
-		manager.merge(descarga);
-		
+		manager.merge(descarga);		
 	}
 
 	@Override
@@ -58,7 +58,4 @@ public class DescargaBean implements DescargaBeanLocal, DescargaBeanRemote {
 		query.setParameter("x", user);
 		return query.getResultList();	
 	}
-	
-	
-
 }

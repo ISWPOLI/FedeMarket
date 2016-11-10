@@ -6,9 +6,9 @@ import java.lang.String;
 import javax.persistence.*;
 
 /**
+ * Entidad Descarga
  * @author Juan Rubiano 
- * 09/11/2016
- * Q-antica Ltda.   
+ * 11/09/2016 
  */
 
 @Entity
@@ -23,14 +23,13 @@ public class Descarga implements Serializable {
 	@Column(name="fecha")
 	private String fecha;	
 	
-	
 	@ManyToOne
 	@JoinColumn(name="contenido_id")
-	private int contenido;
+	private Contenido contenido;
 	
-	//@ManyToOne
+	@ManyToOne
 	@JoinColumn(name="usuario_id")
-	private String usuario;
+	private Usuario usuario;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -51,18 +50,19 @@ public class Descarga implements Serializable {
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}   
-	public int getContenido() {
+	public Contenido getContenido() {
 		return this.contenido;
 	}
 
-	public void setContenido(int contenido) {
+	public void setContenido(Contenido contenido) {
 		this.contenido = contenido;
 	}
 	
-	public String getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
-	public void setUsuario(String usuario) {
+	
+	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
 	

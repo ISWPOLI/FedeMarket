@@ -6,8 +6,8 @@ import javax.persistence.*;
 
 /**
  * @author Juan Rubiano 
- * 08/09/2016
- * Q-antica Ltda.   
+ * 10/11/2016  
+ * 
  */
 
 @Entity

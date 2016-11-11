@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -38,8 +40,9 @@ public class Categoria implements Serializable{
 	@Column(name="estado")
 	private boolean estado;
 	
-	@Column(name="rol_id")
-	private int rol;
+	@ManyToOne
+	@JoinColumn(name="rol_id")
+	private Rol rol;
 	
 	/**
 	 * NO ESTAN LOS DATOS DE CATEGORIA EN LA BASE DE DATOS
@@ -97,11 +100,11 @@ public class Categoria implements Serializable{
 		this.estado = estado;
 	}
 
-	public int getRol() {
+	public Rol getRol() {
 		return rol;
 	}
 
-	public void setRol(int rol) {
+	public void setRol(Rol rol) {
 		this.rol = rol;
 	}
 	

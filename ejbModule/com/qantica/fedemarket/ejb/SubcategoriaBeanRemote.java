@@ -13,6 +13,5 @@ public interface SubcategoriaBeanRemote {
 	public Subcategoria buscarSubcategoria(int id);
 	public void actualizarSubcategoria(Subcategoria subcategoria);
 	public List<Subcategoria> listarSubcategorias(int idRol);
-	public List<Subcategoria> listarSubcategorias();
-	
+	public List<Subcategoria> listarSubcategoriasServlet();	
 }

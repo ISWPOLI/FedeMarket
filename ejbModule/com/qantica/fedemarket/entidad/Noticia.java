@@ -6,8 +6,8 @@ import javax.persistence.*;
 
 /**
  * @author Juan Rubiano 
- * 08/09/2016
- * Q-antica Ltda.   
+ * 10/11/2016  
+ * 
  */
 
 @Entity
@@ -34,8 +34,9 @@ public class Noticia implements Serializable {
 	@Column(name="imagen")
 	private String imagen;
 	
-	@Column(name="rol_id")
-	private String rol;
+	@ManyToOne
+	@JoinColumn(name="rol_id")
+	private Rol rol;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -83,10 +84,10 @@ public class Noticia implements Serializable {
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
-	public String getRol() {
+	public Rol getRol() {
 		return rol;
 	}
-	public void setRol(String rol) {
+	public void setRol(Rol rol) {
 		this.rol = rol;
 	}
    

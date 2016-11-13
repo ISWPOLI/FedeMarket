@@ -8,15 +8,10 @@ import javax.persistence.*;
 
 /**
  * @author Juan Rubiano 
- * 08/09/2016
- * Q-antica Ltda.   
- */
- /*
-  * Se eliminaron los campos "caficultor", "empleado", "investigador", "otros"
-  * Se cambio el campo "estado" de BIT a TINYINT
-  * Se agregó el campo "fecha (DATETIME)"
-  * 
-  */
+ * 13/11/2016
+ * 
+*/
+
 @Entity
 @Table(name="contenido")
 public class Contenido implements Serializable {

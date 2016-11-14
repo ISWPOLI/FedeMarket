@@ -42,19 +42,8 @@ public class RolBean implements RolBeanLocal, RolBeanRemote{
 	 */
 	@Override
 	public List<Rol> listarRoles() {
-<<<<<<< HEAD
 		Query query = manager.createQuery("SELECT entidad FROM Rol entidad WHERE  entidad.estado=:x ORDER BY entidad.id DESC");
-		query.setParameter("x", true);
-=======
-		Query query = manager.createQuery("SELECT entidad FROM Rol entidad WHERE entidad.estado=:x ORDER BY entidad.id DESC");
-		query.setParameter("x", true);
-		return query.getResultList();
-	}
-
-	@Override
-	public List<Rol> listarTodosRoles() {
-		Query query = manager.createQuery("SELECT entidad FROM Rol entidad ORDER BY entidad.id DESC");
->>>>>>> origin/master
+		query.setParameter("x", true);		
 		return query.getResultList();
 	}
 

@@ -20,6 +20,7 @@ public interface RolBeanRemote {
 	
 	//Lista los roles que se encuentran activos
 	public List<Rol> listarRoles();
+	public List<Rol> listarTodosRoles();
 	
 	//Lista todos los roles sin importar si está activo o no
 	public List<Rol> listarTodosRoles();

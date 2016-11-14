@@ -15,8 +15,7 @@ import javax.persistence.Table;
 
 /**
  * @author Juan Rubiano 
- * 08/09/2016
- * Q-antica Ltda.   
+ * 11/11/2016 
  */
 
 @Entity
@@ -43,15 +42,6 @@ public class Categoria implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="rol_id")
 	private Rol rol;
-	
-	/**
-	 * NO ESTAN LOS DATOS DE CATEGORIA EN LA BASE DE DATOS
-	 
-	@OneToMany(mappedBy = "categoria")
-	List<Subcategoria> listaSubCategoria;
-	
-	@OneToMany(mappedBy = "categoria")
-	List<Contenido> listaContenido;*/
 	
 	private static final long serialVersionUID = 1L;
 

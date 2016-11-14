@@ -12,7 +12,7 @@ import com.qantica.fedemarket.entidad.Rol;
 /**
  * Bean que permite acceso a los roles
  * @author Juan Rubiano
- * 10/11/2016 
+ * 13/11/2016 * 
  */
 
 @Stateless
@@ -38,7 +38,14 @@ public class RolBean implements RolBeanLocal, RolBeanRemote{
 
 	@Override
 	public List<Rol> listarRoles() {
-		Query query = manager.createQuery("SELECT entidad FROM Rol entidad ORDER BY entidad.id DESC");		
+		Query query = manager.createQuery("SELECT entidad FROM Rol entidad WHERE entidad.estado=:x ORDER BY entidad.id DESC");
+		query.setParameter("x", true);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<Rol> listarTodosRoles() {
+		Query query = manager.createQuery("SELECT entidad FROM Rol entidad ORDER BY entidad.id DESC");
 		return query.getResultList();
 	}
 

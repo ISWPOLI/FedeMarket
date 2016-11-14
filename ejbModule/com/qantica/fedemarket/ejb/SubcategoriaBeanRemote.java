@@ -6,6 +6,11 @@ import javax.ejb.Remote;
 
 import com.qantica.fedemarket.entidad.Subcategoria;
 
+/**
+ * Bean Remote para la entidad Subcategoria
+ * @author Juan Rubiano
+ * 13/11/16
+ */
 @Remote
 public interface SubcategoriaBeanRemote {
 

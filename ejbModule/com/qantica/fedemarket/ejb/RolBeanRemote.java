@@ -9,7 +9,7 @@ import com.qantica.fedemarket.entidad.Rol;
 /**
  * Bean Remote para la entidad Rol
  * @author Juan Rubiano
- * 13/11/16 *
+ * 13/11/16 s
  */
 @Remote
 public interface RolBeanRemote {

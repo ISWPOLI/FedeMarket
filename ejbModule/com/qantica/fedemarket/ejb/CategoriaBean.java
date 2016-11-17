@@ -13,8 +13,6 @@ import com.qantica.fedemarket.entidad.Subcategoria;
 /**
  * Bean que permite acceso a las categorias
  * @author Juan Rubiano
- * Q-antica Ltda
- * Colombia
  * 09/11/2016 
  */
 

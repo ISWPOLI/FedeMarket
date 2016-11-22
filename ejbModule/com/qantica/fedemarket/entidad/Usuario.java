@@ -13,6 +13,7 @@ import javax.persistence.Table;
 /**
  * @author Juan Rubiano 
  * 08/09/2016
+ * Modificado: 13/11/16 
  */
 
 @Entity

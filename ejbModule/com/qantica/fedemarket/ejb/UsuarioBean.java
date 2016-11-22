@@ -10,6 +10,11 @@ import javax.persistence.Query;
 
 import com.qantica.fedemarket.entidad.Usuario;
 
+/**
+ * Bean para la entidad Usuario
+ * @author Juan Rubiano
+ * 13/11/16 
+ */
  @Stateless
 public class UsuarioBean implements UsuarioBeanLocal, UsuarioBeanRemote{
 
@@ -33,8 +38,7 @@ public class UsuarioBean implements UsuarioBeanLocal, UsuarioBeanRemote{
 
 	@Override
 	public List<Usuario> listarUsuarios() {
-		Query query = manager.createQuery("SELECT entidad FROM usuario entidad WHERE entidad.id=:x");
-		query.setParameter("x", true);
+		Query query = manager.createQuery("SELECT entidad FROM Usuario entidad");
 		return query.getResultList();
 	}
 

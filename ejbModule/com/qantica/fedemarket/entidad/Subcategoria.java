@@ -7,7 +7,9 @@ import javax.persistence.*;
 
 /**
  * @author Juan Rubiano 
- * 10/11/2016 
+ * 10/11/2016
+ * Modificación: 19/11/2016
+ * Se agrega el campo para el ícono 
  */
 
 @Entity
@@ -24,6 +26,9 @@ public class Subcategoria implements Serializable {
 	
 	@Column(name="estado")
 	private boolean estado;
+	
+	@Column(name="icono")
+	private String icono;
 	
 	@ManyToOne
 	@JoinColumn(name="categoria_id")
@@ -89,5 +94,13 @@ public class Subcategoria implements Serializable {
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
+	public String getIcono() {
+		return icono;
+	}
+	public void setIcono(String icono) {
+		this.icono = icono;
+	}
+	
+	
 	
 }

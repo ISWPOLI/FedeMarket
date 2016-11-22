@@ -13,8 +13,6 @@ import com.qantica.fedemarket.entidad.Subcategoria;
 /**
  * Bean que permite acceso a las categorias
  * @author Juan Rubiano
- * Q-antica Ltda
- * Colombia
  * 09/11/2016 
  */
 
@@ -85,7 +83,7 @@ public class CategoriaBean implements CategoriaBeanLocal, CategoriaBeanRemote{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Categoria> listarCategoriaMovil(int rol) {
-		Query query = manager.createQuery("SELECT entidad FROM Categoria entidad WHERE entidad.estado=:x AND entidad.rol");
+		Query query = manager.createQuery("SELECT entidad FROM Categoria entidad WHERE entidad.estado=:x AND entidad.rol.id=:y");
 		query.setParameter("x", true);
 		query.setParameter("y", rol);
 		return query.getResultList();

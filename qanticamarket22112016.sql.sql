@@ -33,6 +33,12 @@ CREATE TABLE `comentario` (
   `usuario_id` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+INSERT INTO `comentario` (`id`, `descripcion`, `fecha`, `nombre`, `rating`, `contenido_id`, `usuario_id`) VALUES
+(1, 'Comentario desde localhost para ver que imprime en el sErvlet', '2016-11-22 13:39:00', 'Juan Rubiano', 3, 1, 1),
+(2, 'Comentario 2 que se ingresa desde el localhost', '2016-11-22 14:40:23', 'Juan Rubiano', 5, 1, 1),
+(3, 'Comentario que se ingresa desde el localhost con el usuario Jacinto', '2016-11-22 14:41:05', 'Jacinto Lopera', 5, 1, 3),
+(4, 'Comentario 1 para el contenido 2 ', '2016-11-22 14:42:35', 'Juan Rubiano', 5, 4, 2);
+
 CREATE TABLE `contenido` (
   `id` int(11) NOT NULL,
   `captura_1` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
@@ -51,8 +57,8 @@ CREATE TABLE `contenido` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 INSERT INTO `contenido` (`id`, `captura_1`, `captura_2`, `descargas`, `descripcion`, `estado`, `icono`, `nombre`, `publicacion`, `rating`, `ruta`, `version`, `categoria_id`, `subcategoria_id`) VALUES
-(1, '1.png', 'concentrate.jpg', 8, 'Juego concéntrate para Samsung', 1, 'ic_launcher_concentrate.png', 'Concéntrate con Samsung', '24/08/2016', 0, 'ConcentrateFinal.apk', '1.2', 1, 1),
-(4, '', '', 0, 'Contenido cargado desde la web', 1, 'ic_launcher.png', 'Contenido Web', '13/11/2016', 0, 'putty.exe', '1.2', 6, NULL);
+(1, '1.png', 'concentrate.jpg', 8, 'Juego concéntrate para Samsung', 1, 'ic_launcher_concentrate.png', 'Concéntrate con Samsung', '2016-04-28 22:00:00', 0, 'ConcentrateFinal.apk', '1.2', 1, 1),
+(4, '', '', 0, 'Contenido cargado desde la web', 1, 'ic_launcher.png', 'Contenido Web', '2016-11-13 14:27:00', 0, 'putty.exe', '1.2', 6, NULL);
 
 CREATE TABLE `descarga` (
   `id` int(11) NOT NULL,
@@ -178,7 +184,7 @@ ALTER TABLE `usuario`
 ALTER TABLE `categoria`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 ALTER TABLE `comentario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 ALTER TABLE `contenido`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 ALTER TABLE `descarga`

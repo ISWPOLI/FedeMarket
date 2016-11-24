@@ -12,6 +12,7 @@ import javax.persistence.Query;
 
 import com.qantica.fedemarket.entidad.Comentario;
 import com.qantica.fedemarket.entidad.Contenido;
+import com.qantica.fedemarket.entidad.Usuario;
 
 /**
  * Bean que permite acceso a los comentarios
@@ -32,7 +33,7 @@ public class ComentarioBean implements ComentarioBeanLocal, ComentarioBeanRemote
 	}
 	
 	@Override
-	public void adicionarComentario(int aid, String uid, int rating, String descripcion, String uname) {
+	public void adicionarComentario(int aid, Usuario uid, int rating, String descripcion, String uname) {
 		Comentario comentario = new Comentario();
 		comentario.setUsuario(uid);
 		comentario.setRating(rating);

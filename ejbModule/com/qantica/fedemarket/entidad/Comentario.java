@@ -32,9 +32,9 @@ public class Comentario implements Serializable {
 	@Column(name="fecha")
 	private String fecha;
 	
-	//@ManyToOne
+	@ManyToOne
 	@JoinColumn(name="usuario_id")	
-	private String usuario;
+	private Usuario usuario;
 	
 	@ManyToOne
 	@JoinColumn(name="contenido_id")	
@@ -78,11 +78,11 @@ public class Comentario implements Serializable {
 		this.fecha = fecha;
 	}
 	
-	public String getUsuario() {
-		return usuario;
+	public Usuario getUsuario() {
+		return usuario; 
 	}
 
-	public void setUsuario(String uid) {
+	public void setUsuario(Usuario uid) {
 		this.usuario = uid;
 	}
 
@@ -101,4 +101,6 @@ public class Comentario implements Serializable {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}   
+	
+	
 }

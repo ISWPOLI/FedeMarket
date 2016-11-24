@@ -6,6 +6,11 @@ import javax.ejb.Remote;
 
 import com.qantica.fedemarket.entidad.Noticia;
 
+/**
+ * Bean Remote para la entidad Noticia
+ * @author Juan Rubiano
+ * 13/11/16
+ */
 @Remote
 public interface NoticiaBeanRemote {
 

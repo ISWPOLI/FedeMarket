@@ -12,8 +12,6 @@ import com.qantica.fedemarket.entidad.Subcategoria;
 /**
  * Bean que permite acceso a las sucategorias
  * @author Juan Rubiano
- * Q-antica Ltda
- * Colombia
  * 08/09/2016 
  */
 
@@ -45,7 +43,7 @@ public class SubcategoriaBean implements SubcategoriaBeanLocal , SubcategoriaBea
 	 */
 	@Override
 	public List<Subcategoria> listarSubcategorias(int categoria) {
-		Query query = manager.createQuery("SELECT entidad FROM subcategoria entidad WHERE categoria_id=:x AND estado=:y");
+		Query query = manager.createQuery("SELECT entidad FROM Subcategoria entidad WHERE categoria_id=:x AND estado=:y");
 		query.setParameter("x", categoria);
 		query.setParameter("y", true);
 		return query.getResultList();

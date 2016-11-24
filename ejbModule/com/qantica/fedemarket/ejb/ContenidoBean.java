@@ -12,11 +12,12 @@ import com.qantica.fedemarket.entidad.Contenido;
 /**
  * Bean que permite acceso al contenido
  * @author Juan Rubiano
- * Q-antica Ltda
- * Colombia
  * 08/09/2016 
+ * Modificación 22/11/2016
+ * Se elimina el método de listarContenido por rol y se 
+ * agrega el método listarContenidoServlet que lista por 
+ * el id de la subcategoria y el id de la categoria recibidos
  */
-
 
 @Stateless
 public class ContenidoBean implements ContenidoBeanLocal, ContenidoBeanRemote{
@@ -68,17 +69,7 @@ public class ContenidoBean implements ContenidoBeanLocal, ContenidoBeanRemote{
 		return query.getResultList();
 	}
 
-	/**
-	 * Lista el contenido de acuerdo al rol 
-	 * @param rol id del Rol 
-	 */
-	@Override
-	public List<Contenido> listarContenido(int rol) {
-		Query query= manager.createQuery("SELECT entidad FROM Contenido entidad WHERE entidad.contenido.rol.id =:x ");
-		query.setParameter("x", Integer.valueOf(rol));
-		return query.getResultList();
-	}
-
+	
 	/**
 	 * Lista el contenido destacado para la aplicación web y móvil
 	 * @param true web sin restricción de resultados. false móvil con un maxímo de 10 resultados
@@ -98,6 +89,32 @@ public class ContenidoBean implements ContenidoBeanLocal, ContenidoBeanRemote{
 	@Override
 	public void updateContenido(Contenido contenido){		
 		manager.merge(contenido);
+	}
+
+	/**
+	 * Lista el contenido de acuerdo al id de la subcategoria
+	 * @param subcategoria id de la subcategoria
+	 * @param categoria id de la categoria
+	 * @return List con el contenido
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Contenido> listarContenidoServlet(int subcategoria, int categoria) {
+		if(subcategoria == 0){
+			Query query = manager.createQuery("SELECT entidad FROM Contenido entidad WHERE categoria_id=:x AND "
+					+ "entidad.estado=:y");
+			query.setParameter("x", categoria);
+			query.setParameter("y", true);
+			return query.getResultList();
+		}else{
+			Query query = manager.createQuery("SELECT entidad FROM Contenido entidad WHERE subcategoria_id=:x "
+					+ "AND entidad.estado=:y");
+			query.setParameter("x", subcategoria);
+			query.setParameter("y", true);
+			return query.getResultList();
+		}
+
+		
 	}	
 
 }

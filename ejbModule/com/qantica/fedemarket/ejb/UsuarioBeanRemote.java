@@ -5,7 +5,7 @@ import javax.ejb.Remote;
 
 import com.qantica.fedemarket.entidad.Usuario;
 
-@Remote
+@Remote 
 public interface UsuarioBeanRemote {
 	
 	public void adicionarUsuario(Usuario usuario);
@@ -14,5 +14,7 @@ public interface UsuarioBeanRemote {
 	public Usuario login(String usuario, String contrasena);
 	public List<Usuario> listarUsuarios();
 	public void addRegistro(String nombre, String string);
+	
+	public List<Usuario> buscarUsuarioIdent(String identificacion);
 	
 }

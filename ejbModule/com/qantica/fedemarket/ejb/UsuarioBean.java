@@ -13,7 +13,9 @@ import com.qantica.fedemarket.entidad.Usuario;
 /**
  * Bean para la entidad Usuario
  * @author Juan Rubiano
- * 13/11/16 
+ * 13/11/16
+ * Modificación 24/11/2016:
+ * Se agrega método para buscar usuario por identificación.
  */
  @Stateless
 public class UsuarioBean implements UsuarioBeanLocal, UsuarioBeanRemote{
@@ -74,5 +76,12 @@ public class UsuarioBean implements UsuarioBeanLocal, UsuarioBeanRemote{
 
 	@Override
 	public void addRegistro(String nombre, String string) {}
+
+	@Override
+	public List<Usuario> buscarUsuarioIdent(String identificacion) {
+		Query query = manager.createQuery("SELECT entidad FROM Usuario entidad WHERE entidad.identificacion=:x");
+		query.setParameter("x", identificacion);
+		return query.getResultList();
+	}
 
 }

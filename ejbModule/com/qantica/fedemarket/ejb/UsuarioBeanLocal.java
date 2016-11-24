@@ -15,4 +15,6 @@ public interface UsuarioBeanLocal {
 	public List<Usuario> listarUsuarios();
 	public Usuario login(String usuario, String contrasena);
 	
+	public List<Usuario> buscarUsuarioIdent(String identificacion);
+	
 }

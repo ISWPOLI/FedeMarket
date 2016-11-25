@@ -17,7 +17,7 @@ import com.qantica.fedemarket.entidad.Usuario;
 @Local
 public interface ComentarioBeanLocal {
 	
-	public void adicionarComentario(int aid, Usuario uid, int rating, String descripcion, String uname);
+	public void adicionarComentario(int aid, Usuario uid, int rating, String descripcion, String uname, String fecha);
 	public List<Comentario> listarComentarios(int id);
 	
 }

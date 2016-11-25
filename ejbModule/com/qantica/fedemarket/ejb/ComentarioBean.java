@@ -32,21 +32,14 @@ public class ComentarioBean implements ComentarioBeanLocal, ComentarioBeanRemote
 		return manager.find(Contenido.class, aid);
 	}
 	
-	@Override
-	public void adicionarComentario(int aid, Usuario uid, int rating, String descripcion, String uname) {
+	@Override 
+	public void adicionarComentario(int aid, Usuario uid, int rating, String descripcion, String uname, String fecha) {
 		Comentario comentario = new Comentario();
 		comentario.setUsuario(uid);
 		comentario.setRating(rating);
 		comentario.setDescripcion(descripcion);
 		comentario.setContenido(buscarContenido(aid));
 		comentario.setNombre(uname);
-		
-		Date utilDate = new Date();
-		long miliSegundos = utilDate.getTime();
-		Timestamp sqlTimestamp = new Timestamp(miliSegundos);
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		String fecha = format.format(sqlTimestamp);
-		
 		comentario.setFecha(fecha);
 		
 		manager.persist(comentario);

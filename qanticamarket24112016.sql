@@ -80,9 +80,14 @@ INSERT INTO `descarga` (`id`, `fecha`, `contenido_id`, `usuario_id`) VALUES
 CREATE TABLE `ingreso` (
   `id` int(11) NOT NULL,
   `fecha` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `nombre` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
   `usuario_id` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+INSERT INTO `ingreso` (`id`, `fecha`, `usuario_id`) VALUES
+(1, '24/11/2016 20:00:34 ', 1),
+(2, '24/11/2016 20:41:21 ', 1),
+(3, '24/11/2016 20:41:28 ', 1),
+(4, '24/11/2016 20:42:13 ', 2);
 
 CREATE TABLE `noticia` (
   `id` int(11) NOT NULL,
@@ -190,7 +195,7 @@ ALTER TABLE `contenido`
 ALTER TABLE `descarga`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 ALTER TABLE `ingreso`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 ALTER TABLE `noticia`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 ALTER TABLE `rol`

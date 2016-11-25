@@ -8,6 +8,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import com.qantica.fedemarket.entidad.Ingreso;
 import com.qantica.fedemarket.entidad.Usuario;
 
 /**
@@ -59,7 +60,6 @@ public class UsuarioBean implements UsuarioBeanLocal, UsuarioBeanRemote{
 			query.setParameter("x", nombreUsuario);
 			query.setParameter("y", contrasena);
 			user = (Usuario) query.getSingleResult();
-			System.out.println("USUARIO -----> "+user);
 			if(!user.equals(null)){
 				id = user.getId();
 				user = buscarUsuario(id);
@@ -72,10 +72,7 @@ public class UsuarioBean implements UsuarioBeanLocal, UsuarioBeanRemote{
 		}
 		return user;
 
-	}
-
-	@Override
-	public void addRegistro(String nombre, String string) {}
+	}	
 
 	@Override
 	public List<Usuario> buscarUsuarioIdent(String identificacion) {

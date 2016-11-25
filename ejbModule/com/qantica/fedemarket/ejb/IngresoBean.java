@@ -11,8 +11,6 @@ import com.qantica.fedemarket.entidad.Ingreso;
 
 /**
  * @author Juan Rubiano
- * Q-antica Ltda
- * Colombia
  * 08/09/2016 
  */
 
@@ -34,7 +32,17 @@ public class IngresoBean implements IngresoBeanRemote{
 		}
 		
 	}
-
+	
+	@Override
+	public void addRegistro(Ingreso nombre) {
+		/*String id = nombre.getUsuario();
+		String fecha = nombre.getFecha();
+		Query query = manager.createQuery("INSERT INTO Ingreso('fecha','usuario_id') VALUES x,y");
+		query.setParameter("x", id);
+		query.setParameter("y", fecha);*/ 
+		manager.persist(nombre); 
+	}
+	
 	@Override
 	public List<Ingreso> listarIngresosSinDescarga() {
 		return null;

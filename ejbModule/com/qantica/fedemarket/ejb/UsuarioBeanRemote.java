@@ -3,6 +3,7 @@ package com.qantica.fedemarket.ejb;
 import java.util.List;
 import javax.ejb.Remote;
 
+import com.qantica.fedemarket.entidad.Ingreso;
 import com.qantica.fedemarket.entidad.Usuario;
 
 @Remote 
@@ -13,7 +14,6 @@ public interface UsuarioBeanRemote {
 	public void actualizarUsuario(Usuario usuario);	
 	public Usuario login(String usuario, String contrasena);
 	public List<Usuario> listarUsuarios();
-	public void addRegistro(String nombre, String string);
 	
 	public List<Usuario> buscarUsuarioIdent(String identificacion);
 	

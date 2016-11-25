@@ -7,7 +7,8 @@ import javax.persistence.*;
 /**
  * @author Juan Rubiano 
  * 08/09/2016
- * Q-antica Ltda.   
+ * Modificación 24/11/2016
+ * Se elimina el campo nombre de la DB y de la entidad
  */
 
 @Entity
@@ -23,12 +24,9 @@ public class Ingreso implements Serializable {
 	@Column(name="fecha")
 	private String fecha;
 	
-	@Column(name="nombre")
-	private String nombre;
-	
-	//@ManyToOne
-	@JoinColumn(name="usuario_id")
-	private String usuario;
+	@ManyToOne
+	@JoinColumn(name="usuario_id") 
+	private Usuario usuario;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -50,17 +48,11 @@ public class Ingreso implements Serializable {
 		this.fecha = fecha;
 	}   
 	
-	public String getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
-	public void setUsuario(String usuario) {
+	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
 	}
 	
    

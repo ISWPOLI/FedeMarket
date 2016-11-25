@@ -12,5 +12,5 @@ public interface IngresoBeanRemote {
 
 	public List<Ingreso> listarIngresos(String user);
 	public List<Ingreso> listarIngresosSinDescarga();
-	
+	public void addRegistro(Ingreso nombre); 
 }
